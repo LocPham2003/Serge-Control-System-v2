@@ -30,7 +30,7 @@ public class TeleopCommand extends CommandBase {
   @Override
   public void execute() {
       if(driverController.getAButtonPressed()){
-            intakeActuationCommand.schedule();
+
       }
   }
 

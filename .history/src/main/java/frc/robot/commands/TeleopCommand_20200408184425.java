@@ -15,7 +15,6 @@ public class TeleopCommand extends CommandBase {
     XboxController driverController = new XboxController(0);
   
     IntakeSpeedCommand intakeSpeedCommand = new IntakeSpeedCommand(this::getIntakeSpeed);
-    IntakeActuationCommand intakeActuationCommand = new IntakeActuationCommand();
 
     public double getIntakeSpeed(){
         return driverController.getTriggerAxis(Hand.kRight);
@@ -29,9 +28,7 @@ public class TeleopCommand extends CommandBase {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-      if(driverController.getAButtonPressed()){
-            intakeActuationCommand.schedule();
-      }
+      if(driverController.getA)
   }
 
   // Called once the command ends or is interrupted.

@@ -15,7 +15,6 @@ public class TeleopCommand extends CommandBase {
     XboxController driverController = new XboxController(0);
   
     IntakeSpeedCommand intakeSpeedCommand = new IntakeSpeedCommand(this::getIntakeSpeed);
-    IntakeActuationCommand intakeActuationCommand = new IntakeActuationCommand();
 
     public double getIntakeSpeed(){
         return driverController.getTriggerAxis(Hand.kRight);
@@ -30,7 +29,7 @@ public class TeleopCommand extends CommandBase {
   @Override
   public void execute() {
       if(driverController.getAButtonPressed()){
-            intakeActuationCommand.schedule();
+          
       }
   }
 
