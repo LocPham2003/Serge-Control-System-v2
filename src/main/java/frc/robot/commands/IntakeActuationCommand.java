@@ -7,34 +7,39 @@
 
 package frc.robot.commands;
 
+import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.Intake;
 
 public class IntakeActuationCommand extends CommandBase {
-  /**
-   * Creates a new IntakeActuationCommand.
-   */
+  Intake intake = Intake.getInstance();
+
+  double prevT;
+
   public IntakeActuationCommand() {
-    // Use addRequirements() here to declare subsystem dependencies.
+      addRequirements(intake);
   }
 
   // Called when the command is initially scheduled.
   @Override
   public void initialize() {
+     prevT = Timer.getFPGATimestamp();
+     intake.actuateIntake(); 
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
+      double currentTime = Timer.getFPGATimestamp();
+      if (currentTime - prevT <= 2.0){
+          intake.setIntakeSpeed(0.5);
+      } else {
+          end(true);
+      }
   }
 
   // Called once the command ends or is interrupted.
   @Override
   public void end(boolean interrupted) {
-  }
-
-  // Returns true when the command should end.
-  @Override
-  public boolean isFinished() {
-    return false;
   }
 }

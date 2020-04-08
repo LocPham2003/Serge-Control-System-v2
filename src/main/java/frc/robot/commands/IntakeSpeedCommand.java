@@ -7,25 +7,28 @@
 
 package frc.robot.commands;
 
+import java.util.function.DoubleSupplier;
+
 import edu.wpi.first.wpilibj2.command.CommandBase;
+import frc.robot.subsystems.Intake;
 
 public class IntakeSpeedCommand extends CommandBase {
-  /**
-   * Creates a new IntakeSpeedCommand.
-   */
-  public IntakeSpeedCommand() {
-    // Use addRequirements() here to declare subsystem dependencies.
-  }
+  Intake intake = Intake.getInstance();
 
-  // Called when the command is initially scheduled.
-  @Override
-  public void initialize() {
+  DoubleSupplier getIntakingSpeed;
+
+  public IntakeSpeedCommand(DoubleSupplier getIntakingSpeed) {
+      this.getIntakingSpeed = getIntakingSpeed;
+      addRequirements(intake);
   }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-  }
+    double speed = this.getIntakingSpeed.getAsDouble();
+
+    intake.setIntakeSpeed(speed);
+}
 
   // Called once the command ends or is interrupted.
   @Override

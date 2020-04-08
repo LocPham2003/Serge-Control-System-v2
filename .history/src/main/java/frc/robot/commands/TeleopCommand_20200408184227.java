@@ -10,7 +10,7 @@ package frc.robot.commands;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
 public class TeleopCommand extends CommandBase {
-  IntakeSpeedCommand intakeSpeedCommand = new IntakeSpeedCommand(this::getIntakeSpeed);
+  IntakeSpeedCommand intakeSpeedCommand = new IntakeSpeedCommand(this::getIntakeSpeed)
 
     public double getIntakeSpeed(){
         return 0;
