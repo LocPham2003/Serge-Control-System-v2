@@ -18,7 +18,7 @@ public class TeleopCommand extends CommandBase {
     SingleFunctionCommand singleFunctionCommand = new SingleFunctionCommand();
     IntakeSpeedCommand intakeSpeedCommand = new IntakeSpeedCommand(this::getIntakeSpeed);
     IntakeActuationCommand intakeActuationCommand = new IntakeActuationCommand();
-    ClimberSpeedCommand climberSpeedCommand = new ClimberSpeedCommand(this::getClimbingSpeed);
+    ClimberSpeedCommand climberSpeedCommand = new Clim
 
     public double getIntakeSpeed(){
         return driverController.getTriggerAxis(Hand.kRight);
@@ -30,7 +30,6 @@ public class TeleopCommand extends CommandBase {
   @Override
   public void initialize() {
     intakeSpeedCommand.schedule();
-    climberSpeedCommand.schedule();
 }
 
   // Called every time the scheduler runs while the command is scheduled.

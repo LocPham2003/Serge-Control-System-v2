@@ -30,7 +30,6 @@ public class TeleopCommand extends CommandBase {
   @Override
   public void initialize() {
     intakeSpeedCommand.schedule();
-    climberSpeedCommand.schedule();
 }
 
   // Called every time the scheduler runs while the command is scheduled.
