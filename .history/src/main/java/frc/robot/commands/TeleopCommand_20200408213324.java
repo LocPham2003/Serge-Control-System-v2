@@ -37,9 +37,9 @@ public class TeleopCommand extends CommandBase {
 
       if(operatorController.getAButtonPressed()){
             singleFunctionCommand.toggleClimberLock().schedule();
+      } else if (operatorController.getAButtonReleased()){
+            singleFunctionCommand.toggleClimberLock().cancel();
       }
-
-
   }
 
   // Called once the command ends or is interrupted.

@@ -5,17 +5,20 @@
 /* the project.                                                               */
 /*----------------------------------------------------------------------------*/
 
-package frc.robot.commands;
+package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj2.command.Command;
-import edu.wpi.first.wpilibj2.command.CommandBase;
-import edu.wpi.first.wpilibj2.command.InstantCommand;
-import frc.robot.subsystems.Climber;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import moto
 
-public class SingleFunctionCommand extends CommandBase {
-  Climber climber = Climber.getInstance();
+public class Climber extends SubsystemBase {
+  
 
-  public Command toggleClimberLock(){
-      return new InstantCommand(climber::toggleClimberLock, climber);
+  public Climber() {
+
+  }
+
+  @Override
+  public void periodic() {
+    // This method will be called once per scheduler run
   }
 }

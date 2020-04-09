@@ -32,10 +32,6 @@ public class Intake extends SubsystemBase {
         return instance;
     }
 
-    public Intake(){
-        
-    }
-
     public void setIntakeSpeed(double speed){
         intakeMiniNeo.set(speed);
     }
@@ -51,4 +47,5 @@ public class Intake extends SubsystemBase {
     public boolean getIntake(){
         return leftIntakePiston.get();
     }
+
 }

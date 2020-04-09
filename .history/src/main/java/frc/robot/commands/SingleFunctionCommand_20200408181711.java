@@ -7,39 +7,24 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj.XboxController;
-import edu.wpi.first.wpilibj.GenericHID.Hand;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 
-public class TeleopCommand extends CommandBase {
-    XboxController driverController = new XboxController(0);
-    XboxController operatorController = new XboxController(1);
+public class SingleFunctionCommand extends CommandBase {
+  /**
+   * Creates a new SingleFunctionCommand.
+   */
+  public SingleFunctionCommand() {
+    // Use addRequirements() here to declare subsystem dependencies.
+  }
 
-    SingleFunctionCommand singleFunctionCommand = new SingleFunctionCommand();
-    IntakeSpeedCommand intakeSpeedCommand = new IntakeSpeedCommand(this::getIntakeSpeed);
-    IntakeActuationCommand intakeActuationCommand = new IntakeActuationCommand();
-
-    public double getIntakeSpeed(){
-        return driverController.getTriggerAxis(Hand.kRight);
-    }
-
+  // Called when the command is initially scheduled.
   @Override
   public void initialize() {
-    intakeSpeedCommand.schedule();
-}
+  }
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-      if(driverController.getAButtonPressed()){
-            intakeActuationCommand.schedule();
-      }
-
-      if(operatorController.getAButtonPressed()){
-            singleFunctionCommand.toggleClimberLock().schedule();
-      }
-
-
   }
 
   // Called once the command ends or is interrupted.

@@ -62,12 +62,10 @@ public class Robot extends TimedRobot {
    */
   @Override
   public void teleopPeriodic() {
-      scheduler.run();
   }
 
   @Override
   public void disabledInit() {
-      scheduler.cancelAll();
   }
 
 }

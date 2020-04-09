@@ -15,7 +15,6 @@ public class TeleopCommand extends CommandBase {
     XboxController driverController = new XboxController(0);
     XboxController operatorController = new XboxController(1);
 
-    SingleFunctionCommand singleFunctionCommand = new SingleFunctionCommand();
     IntakeSpeedCommand intakeSpeedCommand = new IntakeSpeedCommand(this::getIntakeSpeed);
     IntakeActuationCommand intakeActuationCommand = new IntakeActuationCommand();
 
@@ -36,10 +35,8 @@ public class TeleopCommand extends CommandBase {
       }
 
       if(operatorController.getAButtonPressed()){
-            singleFunctionCommand.toggleClimberLock().schedule();
+          
       }
-
-
   }
 
   // Called once the command ends or is interrupted.

@@ -13,9 +13,7 @@ import edu.wpi.first.wpilibj2.command.CommandBase;
 
 public class TeleopCommand extends CommandBase {
     XboxController driverController = new XboxController(0);
-    XboxController operatorController = new XboxController(1);
-
-    SingleFunctionCommand singleFunctionCommand = new SingleFunctionCommand();
+    XboxController operatorController = new XboxController(0);
     IntakeSpeedCommand intakeSpeedCommand = new IntakeSpeedCommand(this::getIntakeSpeed);
     IntakeActuationCommand intakeActuationCommand = new IntakeActuationCommand();
 
@@ -34,12 +32,6 @@ public class TeleopCommand extends CommandBase {
       if(driverController.getAButtonPressed()){
             intakeActuationCommand.schedule();
       }
-
-      if(operatorController.getAButtonPressed()){
-            singleFunctionCommand.toggleClimberLock().schedule();
-      }
-
-
   }
 
   // Called once the command ends or is interrupted.

@@ -7,15 +7,8 @@
 
 package frc.robot.commands;
 
-import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandBase;
-import edu.wpi.first.wpilibj2.command.InstantCommand;
-import frc.robot.subsystems.Climber;
 
 public class SingleFunctionCommand extends CommandBase {
-  Climber climber = Climber.getInstance();
-
-  public Command toggleClimberLock(){
-      return new InstantCommand(climber::toggleClimberLock, climber);
-  }
+  public command 
 }

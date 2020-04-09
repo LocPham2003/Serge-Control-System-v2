@@ -26,5 +26,5 @@ public class Constants {
     public static final int kClimberMaster775ID = 0;
     public static final int kClimberFollower775ID = 0;
 
-    public static final int kClimberPancakeCylinderID = 0;
+    public static final int kClimberPancakeCylinder = 0;
 }
