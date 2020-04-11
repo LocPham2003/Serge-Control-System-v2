@@ -23,8 +23,7 @@ public class MotorController {
     public static TalonFX createMasterTalon(int id, boolean isReversed){
         TalonFX masterTalon = new TalonFX(id);
         masterTalon.setInverted(isReversed);
-        masterTalon.configFactoryDefault();
-        masterTalon.enableVoltageCompensation(true);
+        masterTalon.fact
         return masterTalon;
     }
 
@@ -33,7 +32,6 @@ public class MotorController {
         masterNeo.setInverted(isReversed);
         masterNeo.setIdleMode(IdleMode.kCoast);
         masterNeo.restoreFactoryDefaults();
-        masterNeo.enableVoltageCompensation(12);
         return masterNeo;
     }
 
@@ -42,7 +40,6 @@ public class MotorController {
         followerNeo.follow(master);
         followerNeo.setIdleMode(IdleMode.kCoast);
         followerNeo.restoreFactoryDefaults();
-        followerNeo.enableVoltageCompensation(12);
         followerNeo.close();
     }
 

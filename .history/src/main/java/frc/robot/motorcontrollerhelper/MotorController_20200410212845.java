@@ -42,7 +42,6 @@ public class MotorController {
         followerNeo.follow(master);
         followerNeo.setIdleMode(IdleMode.kCoast);
         followerNeo.restoreFactoryDefaults();
-        followerNeo.enableVoltageCompensation(12);
         followerNeo.close();
     }
 

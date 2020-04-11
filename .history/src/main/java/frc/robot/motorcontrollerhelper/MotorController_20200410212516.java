@@ -33,7 +33,7 @@ public class MotorController {
         masterNeo.setInverted(isReversed);
         masterNeo.setIdleMode(IdleMode.kCoast);
         masterNeo.restoreFactoryDefaults();
-        masterNeo.enableVoltageCompensation(12);
+        masterNeo.enableVoltageCompensation(true)
         return masterNeo;
     }
 
@@ -42,7 +42,6 @@ public class MotorController {
         followerNeo.follow(master);
         followerNeo.setIdleMode(IdleMode.kCoast);
         followerNeo.restoreFactoryDefaults();
-        followerNeo.enableVoltageCompensation(12);
         followerNeo.close();
     }
 
